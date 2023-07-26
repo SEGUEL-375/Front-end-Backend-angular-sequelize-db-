@@ -1,0 +1,36 @@
+<app-progres-bar *ngIf="loading"></app-progres-bar>
+<div *ngIf="!loading" class="row mt-1">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
+            <div class="card-header text-center">{{ operacion }} Usuario</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="addUser()">
+                    <input formControlName="username" type="text" class="form-control" placeholder="Ingrese nombre de usuario">
+                    <span *ngIf="form.get('username')?.hasError('required') && form.get('username')?.touched">
+                        El campo username es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="email" type="text" class="form-control mt-2" placeholder="Ingrese su Email">
+                    <span *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+                        El campo email es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="password" type="text" class="form-control mt-2" placeholder="Ingrese Profesion">
+                    <span *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+                        El campo password es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="date_joined" type="text" class="form-control mt-2" placeholder="Ingrese Fecha">
+                    <span *ngIf="form.get('date_joined')?.hasError('required') && form.get('date_joined')?.touched">
+                        El campo date_joined es <strong>requerido</strong>
+                    </span>
+                    <div class="row mt-2 text-center">
+                        <div class="col-lg-6">
+                            <button routerLink="/" type="button" class="btn btn-secondary">Volver</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button [disabled]="form.invalid" type="submit" class="btn btn-outline-success">Aceptar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

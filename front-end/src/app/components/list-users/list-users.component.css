@@ -1,0 +1,64 @@
+.title {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.btn-info{
+  background: rgb(70,130,180);
+}
+
+.btn-danger {
+  background: rgb(220 ,20, 60);
+}
+
+.btn-dark{
+  background:	rgb(34, 41, 40);position: relative;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+table-active {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+
+}
+
+tr:hover {
+  background-color:#585e59;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+
+.table-hover {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.table-hover, .table-hover td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}

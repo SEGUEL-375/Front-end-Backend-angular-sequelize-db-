@@ -1,0 +1,41 @@
+<app-progres-bar *ngIf="loading"></app-progres-bar>
+<div *ngIf="!loading" class="container">
+    <div class="title">
+        <h3>Listado de Usuarios</h3>
+        <button type="button" class="btn btn-dark" routerLink="/add">Agregar Usuario</button>
+    </div>
+
+    <table *ngIf="listUsers.length > 0" class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre de Usuario</th>
+                <th scope="col">Email/Gmail</th>
+                <th scope="col">Profesion</th>
+                <th scope="col">Fecha de Registro</th>
+                <th scope="col">Opciones</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listUsers" class="table-active">
+                <td>{{ item.id }}</td>
+                <td>{{ item.username }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.password}}</td>
+                <td>{{ item.date_joined}}</td>
+                <td>
+                    <button routerLink="/edit/{{ item.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
+                    <button (click)="deleteUsuarios(item.id!)" type="button" class="btn btn-danger btn-sm ms-2" id="deleteUserButton">Eliminar</button>
+
+
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+    <h5 *ngIf="listUsers.length == 0">No hay usuarios para mostrar</h5>
+
+</div>
